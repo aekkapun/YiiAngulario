@@ -71,6 +71,10 @@ PHP Development Server
 
 После чего можно будет в любом браузере открыть проект по ссылке `http://localhost:8000`
 
+Demo доступ
+-----------
+`test@ang.app` и `lemon007@yandex.ru`
+
 Cкриншоты
 -----------------
 ![Login page](http://dl1.joxi.net/drive/0010/2551/719351/150511/d2989872aa.png)
