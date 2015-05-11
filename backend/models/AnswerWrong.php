@@ -20,7 +20,7 @@ class AnswerWrong extends ActiveRecord
         return [
             [['word_id', 'user_id', 'answer', 'type'], 'required'],
             [['answer'], 'string'],
-            [['type'], 'in', 'range' => Dictionary::TYPES_TRANSLATE],
+            [['type'], 'in', 'range' => Dictionary::typesTranslate()],
             [['word_id'], 'exist', 'targetClass' => '\app\models\Dictionary', 'targetAttribute' => 'id'],
         ];
     }

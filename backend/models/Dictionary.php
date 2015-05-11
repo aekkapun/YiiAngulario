@@ -8,7 +8,6 @@ class Dictionary extends ActiveRecord
 {
     const COLLECTION = 'dictionary';
 
-    const TYPES_TRANSLATE = ['text_rus.text_eng', 'text_eng.text_rus'];
 
     public function collectionName() {
         return self::COLLECTION;
@@ -21,7 +20,8 @@ class Dictionary extends ActiveRecord
             'text_eng',
             'text_rus',
             'type' => function(){
-                return self::TYPES_TRANSLATE[array_rand(self::TYPES_TRANSLATE)];
+                $types = self::typesTranslate();
+                return $types[array_rand($types)];
             },
             'variants' => function ($model) {
                 $total = ['id' => $model->id, 'text_eng' => $model->text_eng, 'text_rus' => $model->text_rus];
@@ -35,6 +35,11 @@ class Dictionary extends ActiveRecord
 
     public static function model($className = __CLASS__) {
         return parent::model($className);
+    }
+
+    public static function typesTranslate()
+    {
+        return ['text_rus.text_eng', 'text_eng.text_rus'];
     }
 
     private function getRandomWords($total_id)
