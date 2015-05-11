@@ -1,0 +1,31 @@
+<div layout="row">
+  <div flex="20"></div>
+  <div flex>
+    <md-content layout="column" flex class="md-padding">
+        <md-card>
+            <form name="form" ng-submit="vm.login()" role="form">
+                <md-card-content>
+                        <md-input-container>
+                            <label>E-mail</label>
+                            <input name="email" ng-model="vm.email" type="email" required md-maxlength="40" minlength="6">
+                            <div ng-messages="form.email.$error" ng-show="form.email.$dirty">
+                                <div ng-message="required">This is required!</div>
+                                <div ng-message="md-maxlength">That's too long!</div>
+                                <div ng-message="minlength">That's too short!</div>
+                                <div ng-message="email">Enter valid email</div>
+                            </div>
+                        </md-input-container>
+                        <md-input-container>
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                    <md-progress-circular class="md-accent md-hue-1" md-mode="indeterminate" ng-show="vm.dataLoading"></md-progress-circular>
+                    <md-button type="submit" ng-disabled="form.$invalid || vm.dataLoading">
+                        Login
+                    </md-button>
+                </div>
+            </form>
+        </md-card>
+    </md-content>
+  </div>
+  <div flex="20"></div>
+</div>

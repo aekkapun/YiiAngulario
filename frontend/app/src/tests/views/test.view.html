@@ -1,0 +1,72 @@
+<div layout="row">
+    <div flex="20"></div>
+    <div flex>
+        <md-content layout="column" flex class="md-padding" ng-show="beginTest">
+            <div layout="row" layout-align="center end" ng-cloak>
+                <h2>{{totalQuestion}} / {{countQuestions}}</h2>
+            </div>
+            <div layout="row" layout-align="right end" ng-cloak>
+                <md-progress-linear class="md-accent" md-mode="determinate" value="{{determinateValue}}"></md-progress-linear>
+            </div>
+            <md-card>
+                <form name="form" ng-submit="check()" role="form" anim>
+                    <md-list ng-cloak>
+                        <div layout="row" layout-align="center end">
+                            <h2>{{question}}</h2>
+                        </div>
+                        <md-divider md-inset></md-divider>
+                        <md-radio-group ng-model="vm.radio" ng-if="vm.from == 'text_eng'" ng-required="!vm.radio">
+                            <md-radio-button ng-repeat="item in answers" ng-value="item.text_rus" aria-label="{{ item.text_rus }}">
+                                {{item.text_rus}}
+                            </md-radio-button>
+                            <div ng-messages="form.radio.$error" ng-show="form.radio.$dirty">
+                                <div ng-message="required">This is required!</div>
+                            </div>
+                        </md-radio-group>
+                        <md-radio-group ng-model="vm.radio" ng-if="vm.from == 'text_rus'" ng-required="!vm.radio">
+                            <md-radio-button ng-repeat="item in answers" ng-value="item.text_eng" aria-label="{{ item.text_eng }}">
+                                {{item.text_eng}}
+                            </md-radio-button>
+                            <div ng-messages="form.radio.$error" ng-show="form.radio.$dirty">
+                                <div ng-message="required">This is required!</div>
+                            </div>
+                        </md-radio-group>
+                    </md-list>
+                    <div layout="row" ng-hide="beginTest">
+                        <div flex="20">
+                            <md-icon md-svg-icon="{{avatar}}" class="avatar"></md-icon>
+                        </div>
+                        <div flex>
+                            <h2>{{username}}</h2>
+                            <span>{{email}}</span>
+                        </div>
+                    </div>
+                    <div layout="row" layout-align="center end" ng-cloak>
+                        <md-button type="submit" class="md-fab md-primary md-hue-2" aria-label="Check">
+                            <md-icon md-svg-src="assets/svg/tick.svg"></md-icon>
+                        </md-button>
+                    </div>
+                </form>
+            </md-card>
+        </md-content>
+        <md-content layout="column" flex class="md-padding" ng-hide="beginTest">
+            <md-card>
+                <div layout="row">
+                    <div flex="20">
+                        <md-icon md-svg-icon="{{avatar}}" class="avatar"></md-icon>
+                    </div>
+                    <div flex>
+                        <h2>{{username}}</h2>
+                        <h4>Score: {{points}}/{{countQuestions}}</h4>
+                    </div>
+                </div>
+            </md-card>
+            <div layout="row" layout-align="center end" ng-cloak>
+                <md-button type="submit" class="md-fab md-primary md-hue-2" aria-label="Repeat" ng-click="runTest()">
+                    <md-icon md-svg-src="assets/svg/repeat.svg"></md-icon>
+                </md-button>
+            </div>
+        </md-content>
+    </div>
+    <div flex="20"></div>
+</div>

@@ -1,0 +1,55 @@
+<html lang="en" ng-app="app">
+
+<head>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.0/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="./assets/app.css">
+    <meta name="viewport" content="initial-scale=1" />
+</head>
+
+<body layout="column">
+    <md-content>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>
+                  <span>AngularJS + Yii2 = CoolApp</span>
+                </h2>
+                <span flex></span>
+                <div ng-controller="LoginController">
+                  <md-button class="md-icon-button" aria-label="Logout" ng-click="logout()" ng-show="logOutButtonShow">
+                      <md-icon md-svg-icon="assets/svg/logout.svg" style="color: white;"></md-icon>
+                  </md-button>
+                </div>
+            </div>
+        </md-toolbar>
+    </md-content>
+    <md-content>
+        <div layout="column" flex id="content" ng-view></div>
+    </md-content>
+    <!-- Angular Material Dependencies -->
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script src="./bower_components/angular-route/angular-route.min.js"></script>
+    <script src="./bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="./bower_components/angular-resource/angular-resource.js"></script>
+    <script src="./bower_components/angular-messages/angular-messages.js"></script>
+    <script src="./bower_components/angular-material/angular-material.js"></script>
+    <script src="./bower_components/a0-angular-storage/dist/angular-storage.js"></script>
+    
+    <script src="./src/app.js"></script>
+    
+    <script src="./src/users/UserService.js"></script>
+    <script src="./src/users/AuthService.js"></script>
+    <script src="./src/tests/QuestionService.js"></script>
+    <script src="./src/tests/AnswerService.js"></script>
+    
+    <script src="./src/directives/animDirective.js"></script>
+
+    <script src="./src/main/AppController.js"></script>
+    <script src="./src/users/LoginController.js"></script>
+    <script src="./src/tests/TestController.js"></script>
+</body>
+
+</html>
