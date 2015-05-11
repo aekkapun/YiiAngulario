@@ -75,6 +75,14 @@ Demo доступ
 -----------
 `test@ang.app` и `lemon007@yandex.ru`
 
+Что нужно помнить
+-----------------
+У Backend части право на запись должны иметь директории `./backend/runtime` и `./backend/web/assets`
+
+Для кросдоменных запросов:
+* [CORS для Apache](http://enable-cors.org/server_apache.html)
+* [CORS для Nginx](http://enable-cors.org/server_nginx.html)
+
 Cкриншоты
 -----------------
 ![Login page](http://dl1.joxi.net/drive/0010/2551/719351/150511/d2989872aa.png)
