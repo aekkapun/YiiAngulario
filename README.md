@@ -106,7 +106,7 @@ Demo доступ
 -----------------
 У Backend части право на запись должны иметь директории `./backend/runtime` и `./backend/web/assets`
 
-Для кросдоменных запросов:
+Для кроссдоменных запросов:
 * [CORS для Apache](http://enable-cors.org/server_apache.html)
 * [CORS для Nginx](http://enable-cors.org/server_nginx.html)
 
